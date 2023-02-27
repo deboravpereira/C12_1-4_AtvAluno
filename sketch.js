@@ -23,8 +23,7 @@ ground.x = ground.width /2;
 ground.velocityX = -4;
 
 //ADICIONAR INVISIBLE GROUND
-invisibleGround = createSprite(200,190,400,10);
-invisibleGround.visible = false;
+
 
 
 }
@@ -35,7 +34,7 @@ background(220);
 console.log(trex.y);
 
 //pular quando a tecla espaço for pressionada
-if (keyDown("space") && trex.y >= 100) {
+if (keyDown("space")) {
   trex.velocityY = -10;
 }
 
@@ -45,7 +44,7 @@ if (ground.x < 0) {
   ground.x = ground.width / 2;
 }
 //FAZER TREX COLIDIR COM O CHÃO INVISÍVEL
-trex.collide(invisibleGround);
+trex.collide(ground);
 
 drawSprites();
 }
